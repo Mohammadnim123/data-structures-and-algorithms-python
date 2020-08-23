@@ -32,6 +32,9 @@ class LinkedList():
             self.head=new_node
             new_node.next=current
 
+
+
+
     def includes (self,value):
         """
         it search about specific value in the linked list
@@ -45,8 +48,76 @@ class LinkedList():
                     return True
                 else :
                     current=current.next    
-            return False             
+            return False
 
+
+
+
+    def append(self,value):
+        """
+        add a vlaue for the first of 
+        """
+        value !=None
+        new_node = Node(value)
+        if not self.head:
+            self.head = new_node
+        else:
+            curent = self.head
+            while curent.next:
+                curent = curent.next
+            curent.next = new_node
+
+
+
+    def insertAfter(self, value, newVal):
+        """
+        in this method your value and any exist value then it will add your value after the choosen value
+        """
+        current = self.head
+        print(current.next)
+        while current is not None:
+            if current.value == value:
+                break
+            current = current.next
+        if current is None:
+            print("Exception: the value not exisit in the linked list")
+        else:
+            new_node = Node(newVal)
+            new_node.next = current.next
+            current.next = new_node 
+
+    
+    
+    def insertBefore(self, value, newVal):
+        """
+        in this method your value and any exist value then it will add your value before the choosen value
+        """
+        if self.head is None:
+            print("List has no element")
+            return
+
+        if value == self.head.value:
+            new_node = Node(newVal)
+            new_node.next = self.head
+            self.head = new_node
+            return
+        current = self.head
+        
+        while current.next is not None:
+            if current.next.value == value:
+                break
+            current = current.next
+        if current.next is None:
+            print("Exception: the value not exisit in the linked list")
+        else:
+            new_node = Node(newVal)
+            new_node.next = current.next
+            current.next = new_node            
+
+
+   
+   
+   
     def __str__(self):
         """
         it print the linked list as string
@@ -58,4 +129,12 @@ class LinkedList():
             current = current.next
         output += "{ Null } -> "
         return output
+
+if __name__ == "__main__":
+    test = LinkedList()
+    test.append(0)
+    test.append(1)
+    test.append(2)
+    test.append(3)
+    print(test.__str__())
         
