@@ -10,6 +10,8 @@ watch the videos until understanding then i write the code
 
 insert ---> O(1)
 includes ---> O(n)
+insertAfter ---> O(n)
+insertBefore ---> O(n)
 `__str__` ---> O(n)
 
 ## API
