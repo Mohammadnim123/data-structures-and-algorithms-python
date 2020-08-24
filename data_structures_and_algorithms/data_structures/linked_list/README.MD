@@ -12,7 +12,12 @@ insert ---> O(1)
 includes ---> O(n)
 insertAfter ---> O(n)
 insertBefore ---> O(n)
+append ---> O(n)
+kth_from_end ---> O(n^2)
 `__str__` ---> O(n)
 
 ## API
 all describtions inside docstrings.
+
+## Whiteboard
+![Linked-list](../../../assets/linked-list.png)
