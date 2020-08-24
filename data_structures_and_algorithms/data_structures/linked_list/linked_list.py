@@ -112,11 +112,23 @@ class LinkedList():
         else:
             new_node = Node(newVal)
             new_node.next = current.next
-            current.next = new_node            
+            current.next = new_node  
 
-
-   
-   
+ 
+    def kth_from_end(self, k):
+        try:
+            counter = -1
+            current = self.head
+            while current:
+                current = current.next
+                counter = counter + 1
+            if counter >= k:
+                current = self.head
+                for i in range(counter - k):
+                    current = current.next
+            return current.value
+        except:
+            return "your value not found"
    
     def __str__(self):
         """
@@ -131,10 +143,15 @@ class LinkedList():
         return output
 
 if __name__ == "__main__":
-    test = LinkedList()
-    test.append(0)
-    test.append(1)
-    test.append(2)
-    test.append(3)
-    print(test.__str__())
+    llist = LinkedList() 
+  
+    # Use push() to construct below list 
+    # 1->12->1->4->1 
+    llist.append(1); 
+    llist.append(4); 
+    llist.append(1); 
+    llist.append(12); 
+    llist.append(1); 
+    print(llist.kth_from_end(66))
+
         
