@@ -4,8 +4,8 @@ from data_structures_and_algorithms.data_structures.linked_list.linked_list impo
 
 
 def test_instance():
-    ll = LinkedList()
-    assert isinstance(ll, LinkedList)
+    test = LinkedList()
+    assert isinstance(test, LinkedList)
 
 
 def test_empty():
@@ -97,6 +97,27 @@ def test_insertBefore_at_middle():
     expected = "{ 0 } -> { 1 } -> { at_middle } -> { 2 } -> { 3 } -> { Null } -> "
     actual = test.__str__()
     assert expected == actual
+
+def test_kth_from_end_at_two():
+    test = LinkedList()
+    test.append(0)
+    test.append(1)
+    test.append(2)
+    test.append(3)
+    expected = 1
+    actual =test.kth_from_end(2)
+    assert expected == actual
+
+def test_kth_from_end_at_zero():
+    test = LinkedList()
+    test.append(0)
+    test.append(1)
+    test.append(2)
+    test.append(3)
+    expected = 3
+    actual =test.kth_from_end(0)
+    assert expected == actual
+
 
 
 
