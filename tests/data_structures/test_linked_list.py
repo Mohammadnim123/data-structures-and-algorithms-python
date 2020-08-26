@@ -118,6 +118,54 @@ def test_kth_from_end_at_zero():
     actual =test.kth_from_end(0)
     assert expected == actual
 
+def test_kth_with_greater_length():
+    test = LinkedList()
+    test.append(0)
+    test.append(1)
+    test.append(2)
+    test.append(3)
+    expected = "ValueError:your value not found"
+    actual =test.kth_from_end(4)
+    assert expected == actual
+
+def test_kth_with_same_length():
+    test = LinkedList()
+    test.append(0)
+    test.append(1)
+    test.append(2)
+    test.append(3)
+    expected = 0
+    actual =test.kth_from_end(3)
+    assert expected == actual
+
+def test_kth_not_positive_integer():
+    test = LinkedList()
+    test.append(0)
+    test.append(1)
+    test.append(2)
+    test.append(3)
+    expected = "ValueError:your value not found"
+    actual =test.kth_from_end(-1)
+    assert expected == actual
+
+def test_kth_linked_list_is_of_a_size_1():
+    test = LinkedList()
+    test.append(3)
+    expected = 3
+    actual =test.kth_from_end(0)
+    assert expected == actual
+
+def test_kth_Happy_Path():
+    test = LinkedList()
+    test.append(0)
+    test.append(1)
+    test.append(2)
+    test.append(3)
+    test.append(4)
+    expected = 2
+    actual =test.kth_from_end(2)
+    assert expected == actual
+
 
 
 
