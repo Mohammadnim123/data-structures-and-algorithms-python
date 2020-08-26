@@ -128,7 +128,7 @@ class LinkedList():
                     current = current.next
             return current.value
         except:
-            return "your value not found"
+            return "ValueError:your value not found"
    
     def __str__(self):
         """
@@ -147,11 +147,11 @@ if __name__ == "__main__":
   
     # Use push() to construct below list 
     # 1->12->1->4->1 
-    llist.append(1); 
-    llist.append(4); 
-    llist.append(1); 
-    llist.append(12); 
-    llist.append(1); 
+    llist.append(1) 
+    llist.append(4)
+    llist.append(1)
+    llist.append(12)
+    llist.append(1)
     print(llist.kth_from_end(66))
 
         
