@@ -10,4 +10,4 @@ output: 1 linked list merged (zipped) in pair form
 it toke frome me more than expected ...
 
 ## Solution
-![ll_zip](../../../assets/ll_zip.png)
+![ll_zip](../../../assets/ll_zipp.png)
