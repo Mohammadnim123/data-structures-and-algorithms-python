@@ -44,10 +44,10 @@ def multi_bracket_validation(input):
 
     
     if Curly_error > 0:
-        print("error unmatched opening [ remaining")
+        print("error unmatched opening { remaining")
         
     elif Curly_error < 0:
-        print("error closing ] arrived without corresponding opening.")
+        print("error closing } arrived without corresponding opening.")
 
     if my_values.__contains__(0):
         return False
@@ -67,5 +67,7 @@ if __name__ == "__main__":
     # multi_bracket_validation('(](')
     # multi_bracket_validation('{')
     # multi_bracket_validation(')')
-    multi_bracket_validation('[}')
+    # multi_bracket_validation('jjlkvjslkj[}')
+    multi_bracket_validation('jjlkvj(slkj')
+
    
