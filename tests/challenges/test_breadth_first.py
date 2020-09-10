@@ -4,7 +4,7 @@ import pytest
 def test_empty_tree():
     test = BinaryTree()
     expected = 'empty tree'
-    actual = breadth_first(test)
+    actual = test.breadth_first()
     expected == actual
 
 def test_full_tree():
@@ -20,7 +20,7 @@ def test_full_tree():
     test.root.left.right.left = Node(5)
 
     expected = [2,7,5,2,6,9,5,11,4]
-    actual = breadth_first(test)
+    actual = test.breadth_first()
     assert expected == actual
     
 
@@ -37,18 +37,15 @@ def test_tree_with_minus():
     test.root.left.right.left = Node(0)
 
     expected = [-2,-7,-5,-2,-6,-9,0,-11,-4]
-    actual = breadth_first(test)
+    actual = test.breadth_first()
     assert expected == actual
 
 def test_tree_with_one_value():
     test = BinaryTree()
     test.root = Node(5)
     expected = [5]
-    actual = breadth_first(test)
+    actual = test.breadth_first()
     assert expected == actual
 
-def test_error():
-    test = 'mohammad'
-    with pytest.raises(ValueError):
-        breadth_first(test)
+
     
