@@ -17,17 +17,35 @@ def zipLists(list1, list2):
     temp = current2.next
 
     while current1.next and current2.next:
-        current1.next, current2.next = current2, current1.next
+        current2.next = current1.next
+        current1.next= current2
         current1 = current2.next
-        current2, temp = temp, temp.next
+        current2 = temp
+        temp = temp.next
+
 
     if not current1.next:
         current1.next = current2
         return list1.head
 
     if not current2.next:
-        current1.next, current2.next = current2, current1.next
+        current2.next = current1.next
+        current1.next = current2
         return list1.head
+
+
+
+
+    
+    
+
+
+            
+            
+
+    
+    
+    
 
    
 
@@ -37,13 +55,18 @@ if __name__ == "__main__":
     second = LinkedList()
 
     first.append(1)
-    first.append(2)
     first.append(3)
-    first.append(4)
+    
+ 
+
    
    
+    second.append(2)
+    second.append(4)
     second.append(5)
     second.append(6)
+
+ 
     
     
 
