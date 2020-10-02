@@ -142,16 +142,115 @@ class LinkedList():
         output += "{ Null } -> "
         return output
 
+    def insertbef(self,goal,newval):
+        if self.head == None:
+            self.head = Node(newval)
+        else:
+            curr = self.head
+            while curr:
+                if curr.next.value == goal:
+                    temp = curr.next
+                    newnode = Node(newval)
+                    newnode.next = temp
+                    curr.next = newnode
+                    break
+                curr = curr.next
+
+    def kth(self, k):
+        if self.head == None:
+            raise ValueError('emty linkedlist')
+
+        else:
+            length = 0
+            curr = self.head
+            while curr:
+                length += 1
+                curr = curr.next
+            new_length = length - k
+            my_value = None
+            curr = self.head
+            for i in range(new_length):
+                my_value = curr.value
+                curr = curr.next
+            if my_value == None:
+                raise Exception("out of the range")
+            return my_value
+
+
+    def rev(self):
+        curr = self.head
+        p = None
+        n = curr.next
+        while n:
+            curr.next = p
+            p = curr
+            curr = n
+            n = n.next
+            curr.next = p
+            self.head = curr
+
+    def mid(self):
+        p1 = self.head
+        p2 = self.head
+        
+        while p2 and p2.next :
+            p1 = p1.next
+            p2 = p2.next.next
+        return p1
+
+    def palindrom(self):
+        length = 0
+        curr = self.head
+        while curr:
+            length+=1
+            curr = curr.next
+        new = LinkedList()
+        mid = self.mid()
+        if length % 2 == 1:
+            new.head = mid.next
+        if length % 2 == 0:
+            new.head = mid
+        new.rev()
+        
+        curr1 = self.head
+        curr2 = new.head
+        while curr2:
+            if curr1.value != curr2.value:
+                return False
+            curr1 = curr1.next
+            curr2 = curr2.next
+        return True
+
+
+
 if __name__ == "__main__":
     llist = LinkedList() 
   
     # Use push() to construct below list 
     # 1->12->1->4->1 
-    llist.append(1) 
-    llist.append(4)
-    llist.append(1)
-    llist.append(12)
-    llist.append(1)
-    print(llist.kth_from_end(66))
+    llist.append('a') 
+    llist.append('bc') 
+    llist.append('d') 
+    llist.append('bc') 
+    llist.append('a') 
+ 
+
+    
+    
+    
+    print(llist.palindrom())
+    # print(llist)
+
+                 
+
+            
+
+   
+   
+    
+    
+    
+    
+
 
         
