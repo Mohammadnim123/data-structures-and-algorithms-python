@@ -113,6 +113,15 @@ class Stack:
             return False
         else:
             return True
+    
+    def getMax(self):
+        maxx = 0
+        while self.top:
+            temp = self.pop()
+            if temp > maxx:
+                maxx = temp
+        return maxx
+        
 
 # pushing 3
 # top -> 4 -> 5 -> None
@@ -130,6 +139,9 @@ if __name__ == '__main__':
     
     
     fruits = Stack()
-    fruits.push('me9ba7','mhawesh')
+    fruits.push(1)
+    fruits.push(2)
+    fruits.push(3)
+
    
-    print(fruits.pop())
+    print(fruits.getMax())
