@@ -125,14 +125,16 @@ def sum(tree):
 
   return total[0]
 
-def height(root):
-
+def height(tree):
+  def _walk(node):
 	# Base case: empty  has height 0
-	if root is None:
-		return 0
+    if node is None:
+      return 0
 
-	# recur for left and right subtree and consider maximum depth
-	return 1 + max(height(root.left), height(root.right))
+    # recur for left and right subtree and consider maximum depth
+    return 1 + max(_walk(node.left), _walk(node.right))
+
+  return _walk(tree.root)
 
 
 
@@ -152,4 +154,4 @@ if __name__=='__main__':
     # tree.root.left.right.left = Node(5)
     # tree.root.left.right.right = Node(11)
     
-    print (height(tree.root))
+    print (height(tree))
