@@ -77,3 +77,7 @@ class Graph:
          Returns: Total number of nodes in the graph
         """
         return len(self._adjacency_list)
+
+    def add_nondirectional_edge(self, start_node, end_node, weight=0):
+        self.add_edge(start_node,  end_node, weight)
+        self.add_edge( end_node, start_node, weight)
